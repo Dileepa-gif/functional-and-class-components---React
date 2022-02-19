@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
-require("dotenv").config();
+const path =require('path');
+require("dotenv").config({path : "./config.env"});
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const routes = require("./routes");
@@ -25,9 +26,22 @@ mongoose.connect(
 );
 
 app.use("/", routes);
-app.route("/").get((req, res) => {
-  res.send("STABLO-WEB");
-});
+// app.route("/").get((req, res) => {
+//   res.send("STABLO-WEB");
+// });
+
+
+if(process.env.NODE_ENV ==="production"){
+  app.use(express.static(path.join(__dirname,'/Client/build')))
+  app.get('*', (req, res)=>{
+    res.sendFile(path.join(__dirname,'Client', 'build', 'index.html'));
+  })
+}else{
+  app.get("/", (req, res) => {
+    console.log("Api running");
+    res.send("Api running");
+  })
+}
 
 app.listen(PORT, () => {
   console.log(`Server is up and running on PORT ${PORT}`);

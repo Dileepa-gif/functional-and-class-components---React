@@ -1,0 +1,72 @@
+.App {
+  text-align: center;
+}
+
+.navbar {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    max-width: 1500px;
+  
+    margin: 0 auto;
+    border-bottom: 1px solid #f2f2f2;
+    background-color: #c1c1c1;
+  }
+  .navbar h5 {
+    color: #554388;
+  }
+  .navbar .links {
+    margin-left: auto;
+  }
+  .navbar a {
+    margin-left: 16px;
+    text-decoration: none;
+    padding: 6px;
+  }
+  .navbar a:hover {
+    color:#554388;;
+  }
+
+.create-form  {
+  width: 40%;
+  padding-top: 3%;
+}
+
+.card-header {
+  text-align: center;
+  background-color: #554388;
+  color: white;
+}
+
+.card-body{
+  align-items:center
+}
+
+.card-footer {
+  background-color:#554388;
+  height: 40px;
+}
+
+.btn-outline-primary{
+  width: 100%;
+  height: 40px;
+  text-align: center;
+}
+
+.btn-outline-success:hover{
+  background: #114c5b;
+}
+
+.form-group{
+  
+  margin-bottom: 15px;
+  margin-left: 5px;
+
+}
+.formcontrol{
+  text-align: center;
+}
+.formcontrol:focus {
+ 
+  border-color: #114c5b;
+}
